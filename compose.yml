@@ -1,0 +1,15 @@
+services:
+  postgres:
+    container_name: rust_axum_todo_app
+    image: postgres:latest
+    volumes:
+      - rust_axum_todo_app_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=123@root
+    ports:
+      - "5432:5432"
+    restart: always
+
+volumes:
+  rust_axum_todo_app_data:
